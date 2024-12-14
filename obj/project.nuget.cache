@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "h+dthSiWz58PUGxCgMPVK7s7za2wAwRSDxJSF0WgRCQWTlOXxlJ6AC94LTPZUzJvqp0Sq+ezwWNqP62MCE/MFA==",
+  "success": true,
+  "projectFilePath": "D:\\pl3Project\\Analysistext\\text_analyzer.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mosta\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
+  ],
+  "logs": []
+}
