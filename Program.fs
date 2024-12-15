@@ -2,6 +2,9 @@
 open System.IO
 open System.Text.RegularExpressions
 open System.Windows.Forms
+open System.Drawing
+open System.Threading.Tasks
+open System.Threading
 
 let cleanText (text: string) =
     let cleaned = Regex.Replace(text, "[^\w\s#]", "") 
@@ -53,8 +56,75 @@ let analyzeText (text: string) =
         else
             0.0
 
-   
     wordCount, sentenceCount, paragraphCount, wordFrequency, averageSentenceLength
+
+    type MainForm() as this =
+    inherit Form()
+
+    do
+        this.Text <- "Text Analysis"
+        this.Width <- 600
+        this.Height <- 400
+        
+    
+        try
+            let backgroundImage = Image.FromFile("_HzwXzIFTtqR_QuVl7hp5w.jpeg") 
+            this.BackgroundImage <- backgroundImage
+            this.BackgroundImageLayout <- ImageLayout.Stretch 
+        with
+        | :? FileNotFoundException -> 
+            MessageBox.Show("Background image not found.") |> ignore
+            this.BackColor <- Color.WhiteSmoke  
+
+        this.Font <- new Font("Arial", 10.0f)
+
+       
+
+        let buttonWidth = 150
+        let buttonHeight = 50
+        let horizontalSpacing = 20
+        
+        let totalButtonWidth = buttonWidth * 2 + horizontalSpacing
+
+       
+        let startX = (this.ClientSize.Width - totalButtonWidth) / 2
+
+        let chooseFileButton = new Button(Text = "Choose File", Width = buttonWidth, Height = buttonHeight)
+        chooseFileButton.BackColor <- Color.Black
+        chooseFileButton.ForeColor <- Color.White
+        chooseFileButton.FlatStyle <- FlatStyle.Flat
+        chooseFileButton.FlatAppearance.BorderSize <- 0
+        chooseFileButton.Location <- Point(startX, 100) 
+        let enterTextButton = new Button(Text = "Enter Text", Width = buttonWidth, Height = buttonHeight)
+        enterTextButton.BackColor <- Color.Black
+        enterTextButton.ForeColor <- Color.White
+        enterTextButton.FlatStyle <- FlatStyle.Flat
+        enterTextButton.FlatAppearance.BorderSize <- 0
+        enterTextButton.Location <- Point(chooseFileButton.Right + horizontalSpacing, 100) 
+
+      
+        let inputChoiceLabel = new Label(Text = "Choose input method:", Dock = DockStyle.Top, Height = 40, TextAlign = ContentAlignment.MiddleCenter)
+        inputChoiceLabel.ForeColor <- Color.White
+        inputChoiceLabel.BackColor <- Color.FromArgb(0, 122, 204) 
+
+        let inputTextBox = new TextBox(Dock = DockStyle.Fill, Multiline = true, Visible = false)
+        inputTextBox.BackColor <- Color.White
+        inputTextBox.ForeColor <- Color.Black
+        inputTextBox.Font <- new Font("Arial", 12.0f)
+        inputTextBox.BorderStyle <- BorderStyle.None
+
+        let resultsButton = new Button(Text = "Analyze Text", Dock = DockStyle.Bottom, Height = 40, Visible = false)
+        resultsButton.BackColor <- Color.FromArgb(100, 149, 237) 
+        resultsButton.ForeColor <- Color.White
+        resultsButton.FlatStyle <- FlatStyle.Flat
+        resultsButton.FlatAppearance.BorderSize <- 0
+
+        let backButton = new Button(Text = "Back", Dock = DockStyle.Bottom, Height = 40, Visible = false)
+        backButton.BackColor <- Color.IndianRed
+        backButton.ForeColor <- Color.White
+        backButton.FlatStyle <- FlatStyle.Flat
+        backButton.FlatAppearance.BorderSize <- 0
+
 [<EntryPoint>]
 let main argv =
     let filePath = "test.txt"
