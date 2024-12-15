@@ -125,6 +125,38 @@ let analyzeText (text: string) =
         backButton.FlatStyle <- FlatStyle.Flat
         backButton.FlatAppearance.BorderSize <- 0
 
+        let showResultsForm (analysisResults) =
+            let wordCount, sentenceCount, paragraphCount, wordFrequency, avgSentenceLength = analysisResults
+            let resultsForm = new Form(Text = "Analysis Results", Width = 600, Height = 500)
+            resultsForm.BackColor <- Color.WhiteSmoke
+
+            let resultRichTextBox = new RichTextBox(Dock = DockStyle.Fill, ReadOnly = true)
+            resultRichTextBox.BackColor <- Color.FromArgb(245, 245, 245)
+            resultRichTextBox.ForeColor <- Color.Black
+            resultRichTextBox.Font <- new Font("Arial", 12.0f)
+            resultRichTextBox.Clear()  
+
+            resultRichTextBox.AppendText(sprintf "Total Words: %d\n" wordCount)
+            resultRichTextBox.SelectionColor <- Color.FromArgb(25, 25, 112) 
+            resultRichTextBox.AppendText(sprintf "Total Sentences: %d\n" sentenceCount)
+            resultRichTextBox.SelectionColor <- Color.ForestGreen
+            resultRichTextBox.AppendText(sprintf "Total Paragraphs: %d\n" paragraphCount)
+            resultRichTextBox.SelectionColor <- Color.DarkOrange
+            resultRichTextBox.AppendText(sprintf "Average Sentence Length: %.2f words\n" avgSentenceLength)
+            resultRichTextBox.SelectionColor <- Color.Indigo
+            resultRichTextBox.AppendText("\nTop 5 Words Frequency:\n")
+            resultRichTextBox.SelectionColor <- Color.Purple
+
+            wordFrequency |> Seq.take 5 |> Seq.iter (fun (word, count) ->
+                resultRichTextBox.AppendText(sprintf "%s: %d\n" word count)
+                resultRichTextBox.SelectionColor <- Color.Black
+            )
+
+            resultsForm.Controls.Add(resultRichTextBox)
+            resultsForm.Show()
+
+
+
 [<EntryPoint>]
 let main argv =
     let filePath = "test.txt"
