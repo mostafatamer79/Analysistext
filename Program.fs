@@ -157,12 +157,59 @@ let analyzeText (text: string) =
 
 
 
+let chooseFile () =
+            let fileDialog = new OpenFileDialog()
+            fileDialog.Filter <- "Text Files (.txt)|.txt|All Files (.)|." 
+            let uiThread = new Thread(ThreadStart(fun () ->
+                let result = fileDialog.ShowDialog()
+                if result = DialogResult.OK then
+                    let filePath = fileDialog.FileName
+                    let fileText = getTextInput filePath
+                    MessageBox.Show(fileText) |> ignore
+                    if fileText <> "" then
+                        inputTextBox.Text <- fileText
+            ))
+            uiThread.SetApartmentState(System.Threading.ApartmentState.STA)
+            uiThread.Start()
+            uiThread.Join()
+            inputTextBox.Visible <- true
+            resultsButton.Visible <- true
+            backButton.Visible <- true
+            chooseFileButton.Visible <- false
+            enterTextButton.Visible <- false
+            inputChoiceLabel.Visible <- false
+        let enterText () =
+            inputTextBox.Visible <- true
+            resultsButton.Visible <- true
+            backButton.Visible <- true
+            chooseFileButton.Visible <- false
+            enterTextButton.Visible <- false
+            inputChoiceLabel.Visible <- false
+            
+        let analyzeInputText () =
+            let inputText = inputTextBox.Text
+            if inputText <> "" then
+                let analysisResults = analyzeText inputText
+                showResultsForm analysisResults
+        let goBackToMainMenu () =
+            inputTextBox.Visible <- false
+            resultsButton.Visible <- false
+            backButton.Visible <- false
+            inputChoiceLabel.Visible <- true
+            chooseFileButton.Visible <- true
+            enterTextButton.Visible <- true
+            inputTextBox.Text <- ""
+        chooseFileButton.Click.Add(fun _ -> chooseFile())
+        enterTextButton.Click.Add(fun _ -> enterText())
+        resultsButton.Click.Add(fun _ -> analyzeInputText())
+        backButton.Click.Add(fun _ -> goBackToMainMenu())
+        this.Controls.Add(chooseFileButton)
+        this.Controls.Add(enterTextButton)
+        this.Controls.Add(inputChoiceLabel)
+        this.Controls.Add(inputTextBox)
+        this.Controls.Add(resultsButton)
+        this.Controls.Add(backButton)
 [<EntryPoint>]
-let main argv =
-    let filePath = "test.txt"
-    let fileContent = getTextInput filePath
-    if fileContent <> "" then
-        printfn "File Content: %s" fileContent
-    else
-        printfn "No content or error in reading file."
-    0 // Return an integer exit code
+let main _ =
+    Application.Run(new MainForm())
+    0
