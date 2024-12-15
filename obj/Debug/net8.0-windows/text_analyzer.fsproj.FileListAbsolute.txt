@@ -115,3 +115,33 @@ D:\pl3Project\Analysistext\obj\Debug\net8.0-windows\refint\text_analyzer.dll
 D:\pl3Project\Analysistext\obj\Debug\net8.0-windows\text_analyzer.pdb
 D:\pl3Project\Analysistext\obj\Debug\net8.0-windows\text_analyzer.genruntimeconfig.cache
 D:\pl3Project\Analysistext\obj\Debug\net8.0-windows\ref\text_analyzer.dll
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.fsproj.AssemblyReference.cache
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.AssemblyInfoInputs.cache
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.AssemblyInfo.fs
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.fsproj.CoreCompileInputs.cache
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.sourcelink.json
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.dll
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\refint\text_analyzer.dll
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.pdb
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\text_analyzer.exe
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\text_analyzer.deps.json
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\text_analyzer.runtimeconfig.json
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\text_analyzer.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\text_analyzer.pdb
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\FSharp.Core.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\cs\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\de\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\es\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\fr\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\it\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\ja\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\ko\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\pl\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\pt-BR\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\ru\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\tr\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\zh-Hans\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\bin\Debug\net8.0-windows\zh-Hant\FSharp.Core.resources.dll
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_ana.4D0F301D.Up2Date
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\text_analyzer.genruntimeconfig.cache
+D:\leve 4\New folder\Analysistext\obj\Debug\net8.0-windows\ref\text_analyzer.dll

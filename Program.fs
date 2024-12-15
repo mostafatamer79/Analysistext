@@ -58,7 +58,7 @@ let analyzeText (text: string) =
 
     wordCount, sentenceCount, paragraphCount, wordFrequency, averageSentenceLength
 
-    type MainForm() as this =
+type MainForm() as this =
     inherit Form()
 
     do
@@ -157,9 +157,9 @@ let analyzeText (text: string) =
 
 
 
-let chooseFile () =
+        let chooseFile () =
             let fileDialog = new OpenFileDialog()
-            fileDialog.Filter <- "Text Files (.txt)|.txt|All Files (.)|." 
+            fileDialog.Filter <- "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
             let uiThread = new Thread(ThreadStart(fun () ->
                 let result = fileDialog.ShowDialog()
                 if result = DialogResult.OK then

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "h+dthSiWz58PUGxCgMPVK7s7za2wAwRSDxJSF0WgRCQWTlOXxlJ6AC94LTPZUzJvqp0Sq+ezwWNqP62MCE/MFA==",
+  "dgSpecHash": "mKg59z4hwnU=",
   "success": true,
-  "projectFilePath": "D:\\pl3Project\\Analysistext\\text_analyzer.fsproj",
+  "projectFilePath": "D:\\leve 4\\New folder\\Analysistext\\text_analyzer.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\mosta\\.nuget\\packages\\fsharp.core\\8.0.200\\fsharp.core.8.0.200.nupkg.sha512"
+    "C:\\Users\\mahmo\\.nuget\\packages\\fsharp.core\\8.0.401\\fsharp.core.8.0.401.nupkg.sha512"
   ],
   "logs": []
 }
